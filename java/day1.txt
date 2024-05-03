@@ -1,3 +1,4 @@
+1 problem 
 public class Main {
     public static void main(String[] args) {
         double num = 12.23;
@@ -5,4 +6,81 @@ public class Main {
         System.out.printf("number: %2f%n", num);
         System.out.printf("number: %2f%n", variable);
             }
+        } 
+
+2 problem
+// find 2nd highest elemetent in array 
+import java.util.Scanner;
+public class array {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of the array: ");
+        int size = scanner.nextInt();
+        int[] arr = new int[size];
+        System.out.println("Enter the elements of the array:");
+        for (int i = 0; i < size; i++) {
+            arr[i] = scanner.nextInt();
         }
+        int max = Integer.MIN_VALUE;
+        int secondMax = Integer.MIN_VALUE;
+
+        for (int i = 0; i < size; i++) {
+            if (arr[i] > max) {
+                secondMax = max;
+                max = arr[i];
+            } else if (arr[i] > secondMax && arr[i] != max) {
+                secondMax = arr[i];
+            }
+        }
+        if (secondMax == Integer.MIN_VALUE) {
+            System.out.println("There is no second highest element.");
+        } else {
+            System.out.println("The second highest element is: " + secondMax);
+        }
+        scanner.close();
+    }
+} 
+
+3 problem 
+//swap values variables without using 3rd variable with arithmatic operation
+import java.util.Scanner;
+public class swaping {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the value of first variable: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter the value of second variable: ");
+        int b = scanner.nextInt();
+        System.out.println("Before swapping:");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        // Swapping without using a third variable
+        a = a + b;
+        b = a - b;
+        a = a - b;
+        System.out.println("After swapping:");
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+        scanner.close();
+    }
+} 
+
+4 problem
+//swap values variables without using 3rd variable without arithmatic operation
+import java.util.Scanner;
+public class swaping {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        int a = scanner.nextInt();
+        System.out.print("Enter the second number: ");
+        int b = scanner.nextInt();
+        System.out.println("Before swapping: a = " + a + ", b = " + b);
+        // Swapping without using a third variable or arithmetic operations
+        a = a ^ b;
+        b = a ^ b;
+        a = a ^ b;
+        System.out.println("After swapping: a = " + a + ", b = " + b);
+        scanner.close();
+    }
+}
